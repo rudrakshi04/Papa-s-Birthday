@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshitij Kapse — 50 Years of a Legend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --navy: #0a0e1a;
+            --navy-light: #111827;
+            --navy-glow: #1a2744;
+            --gold: #d4af37;
+            --gold-light: #e8c84a;
+            --gold-dim: #b8941f;
+            --sky: #87CEEB;
+            --sky-dim: #5ba3c4;
+            --cream: #f5f0e8;
+            --cream-dim: #e8e0d4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--navy); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #0a0e1a 0%, #111827 50%, #0a0e1a 100%);
+        }
+        .hero-particles {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 1;
+        }
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float-particle 8s infinite ease-in-out;
+        }
+        @keyframes float-particle {
+            0%, 100% { opacity: 0; transform: translateY(0) scale(0); }
+            10% { opacity: 0.8; transform: translateY(-20px) scale(1); }
+            90% { opacity: 0.8; transform: translateY(-100vh) scale(0.5); }
+            100% { opacity: 0; transform: translateY(-120vh) scale(0); }
+        }
+        .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s 0.5s forwards;
+        }
+        .hero-name {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            line-height: 1.1;
+            opacity: 0;
+            animation: fadeInUp 1.2s 0.8s forwards;
+            text-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+        }
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: var(--cream-dim);
+            margin-top: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s 1.2s forwards;
+        }
+        .hero-number {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--gold);
+            opacity: 0.15;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0; pointer-events: none;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem; left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            opacity: 0;
+            animation: fadeInUp 1s 2s forwards;
+            cursor: pointer;
+        }
+        .scroll-indicator span {
+            display: block;
+            width: 1px; height: 60px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin: 0 auto;
+            animation: scroll-pulse 2s infinite;
+        }
+        .scroll-indicator p {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 0.5rem;
+        }
+        @keyframes scroll-pulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.2); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline-section { min-height: 100vh; padding: 8rem 2rem; position: relative; background: var(--navy); }
+        .timeline { max-width: 900px; margin: 0 auto; position: relative; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%; transform: translateX(-50%);
+            width: 2px; height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--navy-glow), var(--gold));
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+        .timeline-item:nth-child(odd) .timeline-content { text-align: right; padding-right: 3rem; padding-left: 0; }
+        .timeline-item:nth-child(even) .timeline-content { text-align: left; padding-left: 3rem; padding-right: 0; }
+        .timeline-content { flex: 1; padding: 0 3rem; }
+        .timeline-year {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .timeline-event { font-size: 1.1rem; color: var(--cream); margin-top: 0.5rem; font-weight: 500; }
+        .timeline-desc { font-size: 0.9rem; color: var(--cream-dim); margin-top: 0.3rem; line-height: 1.6; }
+        .timeline-dot {
+            width: 16px; height: 16px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%; transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            z-index: 2;
+        }
+        .timeline-spacer { flex: 1; }
+
+        /* ===== THE MAN ===== */
+        .the-man-section {
+            min-height: 100vh; padding: 8rem 2rem;
+            background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative; overflow: hidden;
+        }
+        .the-man-section::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .the-man-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .the-man-image { position: relative; }
+        .the-man-image img {
+            width: 100%; max-width: 450px;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            filter: contrast(1.05) saturate(1.1);
+            transition: transform 0.6s ease;
+        }
+        .the-man-image:hover img { transform: scale(1.02); }
+        .the-man-image::after {
+            content: '';
+            position: absolute;
+            top: 20px; left: 20px; right: -20px; bottom: -20px;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .the-man-text h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        .the-man-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--cream-dim);
+            margin-bottom: 1.5rem;
+        }
+        .trait-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .trait-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .trait-card:hover {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-3px);
+        }
+        .trait-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .trait-card-title { font-size: 0.85rem; font-weight: 600; color: var(--gold); margin-bottom: 0.3rem; }
+        .trait-card-desc { font-size: 0.8rem; color: var(--cream-dim); }
+
+        /* ===== SACRIFICES ===== */
+        .sacrifices-section { min-height: 100vh; padding: 8rem 2rem; background: var(--navy); position: relative; }
+        .sacrifices-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .sacrifice-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .sacrifice-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .sacrifice-card:hover::before { opacity: 1; }
+        .sacrifice-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .sacrifice-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+        .sacrifice-title { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 1rem; }
+        .sacrifice-desc { font-size: 0.9rem; color: var(--cream-dim); line-height: 1.7; }
+        .sacrifice-highlight { color: var(--gold-light); font-weight: 600; }
+
+        /* ===== NEVER SAID NO ===== */
+        .never-said-no {
+            min-height: 100vh; padding: 8rem 2rem;
+            background: linear-gradient(180deg, var(--navy) 0%, #0d1220 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .never-said-no::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23d4af37" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .never-content { max-width: 800px; text-align: center; position: relative; z-index: 2; }
+        .never-label {
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+        .never-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--cream);
+            margin-bottom: 3rem;
+        }
+        .never-title span { color: var(--gold); }
+        .never-story {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 2;
+            color: var(--cream-dim);
+            margin-bottom: 3rem;
+        }
+        .never-story p { margin-bottom: 1.5rem; }
+        .never-story .highlight { color: var(--gold-light); font-weight: 600; }
+        .trident-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+        }
+        .trident-badge span { font-size: 0.85rem; color: var(--gold); }
+
+        /* ===== FAMILY ===== */
+        .family-section { min-height: 100vh; padding: 8rem 2rem; background: var(--navy-light); position: relative; }
+        .family-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        .family-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .family-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .family-card-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            filter: contrast(1.05) saturate(1.1);
+            transition: transform 0.5s ease;
+        }
+        .family-card:hover .family-card-image { transform: scale(1.05); }
+        .family-card-content { padding: 2rem; }
+        .family-card-name { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.3rem; }
+        .family-card-role {
+            font-size: 0.8rem;
+            color: var(--sky);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .family-card-message {
+            font-size: 0.95rem;
+            color: var(--cream-dim);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* ===== HEALTH ===== */
+        .health-section {
+            min-height: 100vh; padding: 8rem 2rem;
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+            position: relative;
+        }
+        .health-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .health-text h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        .health-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--cream-dim);
+            margin-bottom: 1.5rem;
+        }
+        .health-battles {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .battle-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        .battle-item:hover { background: rgba(212, 175, 55, 0.05); }
+        .battle-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .battle-content h4 { font-size: 0.95rem; color: var(--gold); margin-bottom: 0.3rem; }
+        .battle-content p { font-size: 0.85rem; color: var(--cream-dim); line-height: 1.6; margin: 0; }
+        .health-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            filter: contrast(1.05);
+        }
+        .health-plea {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(135, 206, 235, 0.05);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .health-plea p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            color: var(--sky);
+            margin: 0;
+        }
+
+        /* ===== DREAMS ===== */
+        .dreams-section {
+            min-height: 100vh; padding: 8rem 2rem;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+        .dreams-section::before {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -20%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .dreams-content { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+        .dreams-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+        .dreams-title span { color: var(--gold); }
+        .dreams-subtitle {
+            font-size: 1.1rem;
+            color: var(--cream-dim);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .dreams-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .dream-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .dream-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        .dream-card-badge {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+        }
+        .dream-card-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+        .dream-card-title { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1rem; }
+        .dream-card-desc { font-size: 0.95rem; color: var(--cream-dim); line-height: 1.7; }
+        .dream-promise {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            margin-top: 2rem;
+        }
+
+        /* ===== LETTER ===== */
+        .letter-section {
+            min-height: 100vh; padding: 8rem 2rem;
+            background: linear-gradient(180deg, var(--navy) 0%, #0d1220 50%, var(--navy) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .letter-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .letter-content {
+            max-width: 700px;
+            background: rgba(255,255,255,0.015);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            position: relative;
+            z-index: 2;
+        }
+        .letter-seal {
+            width: 60px; height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 1.5rem;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+        .letter-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .letter-body {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            line-height: 2.2;
+            color: var(--cream-dim);
+        }
+        .letter-body p { margin-bottom: 1.5rem; }
+        .letter-body .highlight { color: var(--gold-light); font-weight: 600; }
+        .letter-body .germany { color: var(--sky); font-weight: 600; }
+        .letter-signature {
+            text-align: right;
+            margin-top: 3rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        .letter-from {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--cream-dim);
+            margin-top: 0.5rem;
+        }
+
+        /* ===== WISHES ===== */
+        .wishes-section { min-height: 100vh; padding: 8rem 2rem; background: var(--navy-light); position: relative; }
+        .wishes-content { max-width: 900px; margin: 0 auto; text-align: center; }
+        .wishes-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+        .wishes-title span { color: var(--gold); }
+        .wishes-subtitle { font-size: 1rem; color: var(--cream-dim); margin-bottom: 3rem; }
+        .wish-form {
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .wish-form input, .wish-form textarea {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            color: var(--cream);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .wish-form input:focus, .wish-form textarea:focus {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+        }
+        .wish-form input::placeholder, .wish-form textarea::placeholder { color: rgba(245, 240, 232, 0.4); }
+        .wish-form button {
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        .wish-form button:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        .wishes-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .wish-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            animation: wishFloat 0.6s ease forwards;
+        }
+        .wish-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-3px);
+        }
+        @keyframes wishFloat {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .wish-card-name { font-size: 0.85rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; }
+        .wish-card-text { font-size: 0.9rem; color: var(--cream-dim); line-height: 1.6; }
+        .wish-card-time { font-size: 0.7rem; color: rgba(245, 240, 232, 0.3); margin-top: 0.8rem; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--navy);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .footer-text { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 1rem; }
+        .footer-sub { font-size: 0.85rem; color: var(--cream-dim); }
+        .footer-heart { color: #e74c3c; animation: heartbeat 1.5s infinite; }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+        }
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.3s ease;
+            filter: brightness(0.85) contrast(1.05);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(1) contrast(1.05);
+        }
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+        .gallery-item:nth-child(7) { grid-column: span 2; grid-row: span 2; }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-caption { font-size: 0.85rem; color: var(--cream); font-weight: 500; }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 2rem; right: 2rem;
+            font-size: 2rem;
+            color: var(--cream);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .the-man-grid, .health-content { grid-template-columns: 1fr; gap: 3rem; }
+            .the-man-image { order: -1; text-align: center; }
+            .the-man-image img { max-width: 350px; }
+            .sacrifices-grid { grid-template-columns: 1fr; }
+            .family-grid { grid-template-columns: 1fr; }
+            .dreams-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:nth-child(1), .gallery-item:nth-child(7) { grid-column: span 2; grid-row: span 1; }
+            .timeline::before { left: 20px; }
+            .timeline-item { flex-direction: column !important; align-items: flex-start; padding-left: 50px; }
+            .timeline-item .timeline-content { text-align: left !important; padding: 0 !important; }
+            .timeline-dot { left: 20px; }
+            .timeline-spacer { display: none; }
+        }
+        @media (max-width: 600px) {
+            .hero-name { letter-spacing: 0.05em; }
+            .letter-content { padding: 2.5rem 1.5rem; }
+            .trait-cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== SECTION 1: HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-number">50</div>
+        <div class="hero-content">
+            <div class="hero-badge">A Legend Turns</div>
+            <h1 class="hero-name">Kshitij Kapse</h1>
+            <p class="hero-subtitle">"Some men build buildings. He built a life."</p>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('timeline').scrollIntoView({behavior:'smooth'})">
+            <span></span>
+            <p>Scroll to Begin</p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2: TIMELINE ===== -->
+    <section class="timeline-section" id="timeline">
+        <div class="section-header">
+            <div class="section-label">The Journey</div>
+            <h2 class="section-title">50 Years of a Warrior</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1976</div>
+                    <div class="timeline-event">The Legend Begins</div>
+                    <div class="timeline-desc">Born in Indore, MP — a star entered the world</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-spacer"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2001</div>
+                    <div class="timeline-event">A New Chapter</div>
+                    <div class="timeline-desc">Married Sandhya — the beginning of everything beautiful</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-spacer"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-event">A Heartbreaking Loss</div>
+                    <div class="timeline-desc">Lost his father to blood cancer. Three months later, Rudrakshi (Avid) was born — a new reason to fight</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-spacer"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2009</div>
+                    <div class="timeline-event">Family First</div>
+                    <div class="timeline-desc">Came back to Indore from Mumbai for family. Lakshita (Lakhi) was born — the family was complete</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-spacer"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-event">Another Goodbye</div>
+                    <div class="timeline-desc">Lost his mother. The world took too much from him, but he never broke</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-spacer"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-event">The Gall Bladder Battle</div>
+                    <div class="timeline-desc">Had his gall bladder removed due to stones. A warrior's body took another hit, but his spirit stayed strong</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-spacer"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-event">50 Years of Pure Gold</div>
+                    <div class="timeline-desc">Half a century of fighting, loving, sacrificing, and building. The best is yet to come, Papa.</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-spacer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3: THE MAN ===== -->
+    <section class="the-man-section" id="the-man">
+        <div class="the-man-grid">
+            <div class="the-man-image">
+                <img src="images/IMG_3595.jpg" alt="Kshitij Kapse">
+            </div>
+            <div class="the-man-text">
+                <h2>The Man, The Myth, The Papa</h2>
+                <p>He worked with the <strong>World Health Organization</strong>. He worked with <strong>Reliance</strong> in Mumbai. The world saw his talent before we did.</p>
+                <p>Then he chose us. Every single time.</p>
+                <p>He loves games, movies, and series — his favorite character is <strong>Thanos</strong> from the Avengers. He's spiritual, devoted to <strong>Lord Shiv</strong>. He says "<em>Padri</em>" as a joke (which also means... well, you know 😄).</p>
+                <p>Weekends are for movie marathons — <strong>Harry Potter, Marvel</strong>, you name it. And parties with friends who are like a second family.</p>
+                <div class="trait-cards">
+                    <div class="trait-card">
+                        <div class="trait-card-icon">🎮</div>
+                        <div class="trait-card-title">Gamer at Heart</div>
+                        <div class="trait-card-desc">Loves games, business strategy, and fun</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-card-icon">🕉️</div>
+                        <div class="trait-card-title">Spiritual Soul</div>
+                        <div class="trait-card-desc">Devoted to Lord Shiv, daily puja</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-card-icon">🎬</div>
+                        <div class="trait-card-title">Movie Buff</div>
+                        <div class="trait-card-desc">Harry Potter, Marvel, late night binges</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-card-icon">💼</div>
+                        <div class="trait-card-title">Business Mind</div>
+                        <div class="trait-card-desc">Tried Dhaba, concrete, never gave up</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4: SACRIFICES ===== -->
+    <section class="sacrifices-section" id="sacrifices">
+        <div class="section-header">
+            <div class="section-label">The Untold Story</div>
+            <h2 class="section-title">Then He Chose Us</h2>
+        </div>
+        <div class="sacrifices-grid">
+            <div class="sacrifice-card">
+                <span class="sacrifice-icon">🏠</span>
+                <h3 class="sacrifice-title">The Move Back Home</h3>
+                <p class="sacrifice-desc">In <span class="sacrifice-highlight">2009</span>, he left Mumbai and came back to Indore for family. A promising career in the big city, left behind for the people who mattered most.</p>
+            </div>
+            <div class="sacrifice-card">
+                <span class="sacrifice-icon">🏗️</span>
+                <h3 class="sacrifice-title">The Failed Ventures</h3>
+                <p class="sacrifice-desc">He tried <span class="sacrifice-highlight">Dhaba</span>, <span class="sacrifice-highlight">concrete business</span>, and more. Each one didn't work out. But he got up every single time. For us.</p>
+            </div>
+            <div class="sacrifice-card">
+                <span class="sacrifice-icon">📡</span>
+                <h3 class="sacrifice-title">The MVTD Years</h3>
+                <p class="sacrifice-desc">He built his boss's empire at MVTD Telecom. Things weren't working out well, but he <span class="sacrifice-highlight">held on</span>... so I could go to Germany.</p>
+            </div>
+            <div class="sacrifice-card">
+                <span class="sacrifice-icon">💍</span>
+                <h3 class="sacrifice-title">25th Anniversary</h3>
+                <p class="sacrifice-desc"><span class="sacrifice-highlight">May 24, 2026</span> — celebrated, but not grand. The money was being saved. For my future.</p>
+            </div>
+            <div class="sacrifice-card">
+                <span class="sacrifice-icon">🎂</span>
+                <h3 class="sacrifice-title">50th Birthday</h3>
+                <p class="sacrifice-desc">Tomorrow, <span class="sacrifice-highlight">July 13, 2026</span> — another sacrifice. No grand party. Because a <span class="sacrifice-highlight">56 lakh loan</span> for my Master's in Germany matters more.</p>
+            </div>
+            <div class="sacrifice-card">
+                <span class="sacrifice-icon">❤️</span>
+                <h3 class="sacrifice-title">The Ultimate Truth</h3>
+                <p class="sacrifice-desc">"<em>He gave up his dreams so we could have ours.</em>" Every rupee saved, every dream postponed — all for us.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5: NEVER SAID NO ===== -->
+    <section class="never-said-no" id="never-said-no">
+        <div class="never-content">
+            <div class="never-label">The Story That Defines Everything</div>
+            <h2 class="never-title">He <span>Never</span> Said No</h2>
+            <div class="never-story">
+                <p>When my <span class="highlight">USA visa got denied</span>, we had already spent <span class="highlight">3-5 lakhs</span>. We stayed at his friend's house in Mumbai for 7 days. I was devastated.</p>
+                <p>He told me, <em>"It's okay. No problem."</em> When it clearly was a problem.</p>
+                <p>We had decided — if I got the visa, we'd celebrate at the most expensive cafe at <span class="highlight">Trident Hotel, BKC</span>. The visa was rejected. I was crying. I wanted to go home.</p>
+                <p>He still took me there. Ordered the <span class="highlight">most expensive coffee and dessert</span>. Took my photos. Tried to make me smile.</p>
+                <p>That's who he is. He turns heartbreaks into memories.</p>
+            </div>
+            <div class="trident-badge">
+                <span>☕ Trident Hotel, BKC — The Coffee That Meant Everything</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6: FAMILY ===== -->
+    <section class="family-section" id="family">
+        <div class="section-header">
+            <div class="section-label">The People He Built</div>
+            <h2 class="section-title">The Family He Protected</h2>
+        </div>
+        <div class="family-grid">
+            <div class="family-card">
+                <img src="images/IMG_5697.JPG" alt="Sandhya and Kshitij" class="family-card-image">
+                <div class="family-card-content">
+                    <h3 class="family-card-name">Sandhya</h3>
+                    <div class="family-card-role">His Partner in Everything</div>
+                    <p class="family-card-message">"25 years of standing by each other. Through every up and down, you've been my rock. Happy 50th, my love."</p>
+                </div>
+            </div>
+            <div class="family-card">
+                <img src="images/1facc224-8bce-4c51-8bd6-7718580ee923.JPG" alt="Rudrakshi and Papa" class="family-card-image">
+                <div class="family-card-content">
+                    <h3 class="family-card-name">Rudrakshi (Avid)</h3>
+                    <div class="family-card-role">His First Born, His Pride</div>
+                    <p class="family-card-message">"You never said no to me. Not once. Not ever. I'm going to Germany because of you, Papa. And I'll make you prouder than you ever imagined."</p>
+                </div>
+            </div>
+            <div class="family-card">
+                <img src="images/29868dfa-0ebd-4eda-9b33-37421acb9041.JPG" alt="Lakshita and Papa" class="family-card-image">
+                <div class="family-card-content">
+                    <h3 class="family-card-name">Lakshita (Lakhi)</h3>
+                    <div class="family-card-role">His Little Princess</div>
+                    <p class="family-card-message">"Papa, you're the coolest dad ever. Thank you for every movie night, every joke, and every hug. I love you so much!"</p>
+                </div>
+            </div>
+            <div class="family-card">
+                <img src="images/IMG_2341.JPG" alt="The Kapse Family" class="family-card-image">
+                <div class="family-card-content">
+                    <h3 class="family-card-name">The Kapse Family</h3>
+                    <div class="family-card-role">Built on Love & Sacrifice</div>
+                    <p class="family-card-message">"Four hearts, one home. Every sacrifice, every smile, every tear — it was all worth it because we have each other."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7: HEALTH ===== -->
+    <section class="health-section" id="health">
+        <div class="health-content">
+            <div class="health-text">
+                <h2>The Warrior's Body</h2>
+                <p>He's been through battles most people don't survive. But he never complained. He just kept fighting.</p>
+                <div class="health-battles">
+                    <div class="battle-item">
+                        <span class="battle-icon">🦴</span>
+                        <div class="battle-content">
+                            <h4>Slip Disc L4-L5 (2009-10)</h4>
+                            <p>Doctors said he needed surgery. He refused. "What if I don't wake up for them?" He chose the pain over the risk. For us.</p>
+                        </div>
+                    </div>
+                    <div class="battle-item">
+                        <span class="battle-icon">🏥</span>
+                        <div class="battle-content">
+                            <h4>Gall Bladder Removal (2019)</h4>
+                            <p>Stones that couldn't be ignored. The operation left him with digestion issues. But he joined the gym anyway. The warrior never quits.</p>
+                        </div>
+                    </div>
+                    <div class="battle-item">
+                        <span class="battle-icon">💪</span>
+                        <div class="battle-content">
+                            <h4>The Gym Warrior</h4>
+                            <p>Despite everything, he shows up. Every day. Because he knows we need him healthy. For 50 more years.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="health-plea">
+                    <p>"Papa, please quit smoking. Drink less. We need you here. Healthy. Happy. With us. Forever."</p>
+                </div>
+            </div>
+            <div class="health-image">
+                <img src="images/IMG_9306.jpg" alt="Kshitij Kapse">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 8: DREAMS ===== -->
+    <section class="dreams-section" id="dreams">
+        <div class="dreams-content">
+            <div class="section-label">The Promises We Make</div>
+            <h2 class="dreams-title">The Dreams We <span>Owe</span> Him</h2>
+            <p class="dreams-subtitle">He never asked for anything. But we're giving him everything anyway.</p>
+            <div class="dreams-grid">
+                <div class="dream-card">
+                    <div class="dream-card-badge">Virtual Today</div>
+                    <div class="dream-card-icon">🏍️</div>
+                    <h3 class="dream-card-title">The Royal Enfield</h3>
+                    <p class="dream-card-desc">The bike he always wanted. The bike we couldn't afford. But in our hearts, it's already his. One day, the real thing.</p>
+                </div>
+                <div class="dream-card">
+                    <div class="dream-card-badge">Promise</div>
+                    <div class="dream-card-icon">🚗</div>
+                    <h3 class="dream-card-title">The German Car</h3>
+                    <p class="dream-card-desc">Not from the first salary — I need to repay the loan first. But the <strong>first car I buy</strong> will be German. For you, Papa. That's a promise.</p>
+                </div>
+            </div>
+            <p class="dream-promise">"You gave me the world. I'm going to give you the stars."</p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 9: LETTER ===== -->
+    <section class="letter-section" id="letter">
+        <div class="letter-content">
+            <div class="letter-seal">✉️</div>
+            <h2 class="letter-title">From Germany, With Love</h2>
+            <div class="letter-body">
+                <p>Dear Papa,</p>
+                <p>Tomorrow you turn <span class="highlight">50</span>. Half a century of fighting, building, sacrificing, and loving.</p>
+                <p>You lost your father at <span class="highlight">27</span>. You built everything alone. You gave your sister a wedding in <span class="highlight">2009</span>. You buried your mother in <span class="highlight">2016</span>. You left WHO, left Reliance, left your pride — all for us.</p>
+                <p>When my USA visa got rejected, you lost <span class="highlight">3-5 lakhs</span> and still took me to <span class="highlight">Trident, BKC</span>. The most expensive coffee in Mumbai. While I cried, you took my photos. You said <em>"it's okay"</em> when it wasn't.</p>
+                <p>You held onto a job where things weren't working out — so I could go to <span class="germany">Germany</span>. You skipped a grand 25th anniversary. You're skipping a grand 50th birthday. For a <span class="highlight">56 lakh loan</span> that <strong>I'LL</strong> pay back. Not you. Me.</p>
+                <p>You have a slip disc you refused to operate because <em>"what if I don't wake up?"</em> You lost your gall bladder. You joined the gym anyway. You never quit.</p>
+                <p>But Papa, I need you to quit two things: <span class="highlight">smoking</span>. And <span class="highlight">worrying about my loan</span>.</p>
+                <p><em>Who'll watch Harry Potter with me now? Who'll pack his lunch? Who'll find his socks?</em></p>
+                <p>You never said no to me. Not once. Not ever.</p>
+                <p>So here's my yes: I'll buy you that <span class="germany">German car</span>. From my money. This is a promise, not a dream.</p>
+                <p>I love you, Papa. You're the best father in the world. And I'm the luckiest son.</p>
+            </div>
+            <div class="letter-signature">— Rudrakshi (Avid)</div>
+            <div class="letter-from">From Germany, With Love ❤️</div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 10: WISHES ===== -->
+    <section class="wishes-section" id="wishes">
+        <div class="wishes-content">
+            <div class="section-label">Share The Love</div>
+            <h2 class="wishes-title">50 Wishes for <span>50 Years</span></h2>
+            <p class="wishes-subtitle">Leave a birthday wish for Kshitij Papa. He'll read every single one.</p>
+            <form class="wish-form" id="wishForm">
+                <input type="text" id="wishName" placeholder="Your Name" required>
+                <textarea id="wishText" rows="3" placeholder="Write your birthday wish..." required></textarea>
+                <button type="submit">✨ Send Birthday Wish</button>
+            </form>
+            <div class="wishes-wall" id="wishesWall"></div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-text">Happy 50th Birthday, Papa</div>
+        <div class="footer-sub">Made with <span class="footer-heart">❤</span> by Rudrakshi (Avid) for the best father in the world</div>
+        <div class="footer-sub" style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">July 13, 2026 | Indore, India → Germany</div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="" id="lightbox-img">
+    </div>
+
+    <script>
+        // ===== PARTICLES =====
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 8 + 's';
+            p.style.animationDuration = (6 + Math.random() * 6) + 's';
+            p.style.width = (2 + Math.random() * 3) + 'px';
+            p.style.height = p.style.width;
+            particlesContainer.appendChild(p);
+        }
+
+        // ===== GSAP SCROLLTRIGGER =====
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Timeline items
+        gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+            gsap.to(item, {
+                opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+                scrollTrigger: { trigger: item, start: 'top 85%', toggleActions: 'play none none none' },
+                delay: i * 0.1
+            });
+        });
+
+        // Sacrifice cards
+        gsap.utils.toArray('.sacrifice-card').forEach((card, i) => {
+            gsap.to(card, {
+                opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+                scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none none' },
+                delay: i * 0.15
+            });
+        });
+
+        // Family cards
+        gsap.utils.toArray('.family-card').forEach((card, i) => {
+            gsap.to(card, {
+                opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+                scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none none' },
+                delay: i * 0.15
+            });
+        });
+
+        // Dream cards
+        gsap.utils.toArray('.dream-card').forEach((card, i) => {
+            gsap.to(card, {
+                opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+                scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none none' },
+                delay: i * 0.2
+            });
+        });
+
+        // The Man section
+        gsap.from('.the-man-text', {
+            opacity: 0, x: 50, duration: 1, ease: 'power2.out',
+            scrollTrigger: { trigger: '.the-man-section', start: 'top 70%' }
+        });
+        gsap.from('.the-man-image', {
+            opacity: 0, x: -50, duration: 1, ease: 'power2.out',
+            scrollTrigger: { trigger: '.the-man-section', start: 'top 70%' }
+        });
+
+        // Health section
+        gsap.from('.health-text', {
+            opacity: 0, x: -50, duration: 1, ease: 'power2.out',
+            scrollTrigger: { trigger: '.health-section', start: 'top 70%' }
+        });
+        gsap.from('.health-image', {
+            opacity: 0, x: 50, duration: 1, ease: 'power2.out',
+            scrollTrigger: { trigger: '.health-section', start: 'top 70%' }
+        });
+
+        // Letter section
+        gsap.from('.letter-content', {
+            opacity: 0, y: 60, duration: 1.2, ease: 'power2.out',
+            scrollTrigger: { trigger: '.letter-section', start: 'top 70%' }
+        });
+
+        // ===== WISHES (localStorage) =====
+        const wishForm = document.getElementById('wishForm');
+        const wishesWall = document.getElementById('wishesWall');
+
+        function loadWishes() {
+            const wishes = JSON.parse(localStorage.getItem('papaWishes') || '[]');
+            wishesWall.innerHTML = '';
+            wishes.forEach(wish => addWishCard(wish.name, wish.text, wish.time));
+        }
+
+        function addWishCard(name, text, time) {
+            const card = document.createElement('div');
+            card.className = 'wish-card';
+            card.innerHTML = `
+                <div class="wish-card-name">${escapeHtml(name)}</div>
+                <div class="wish-card-text">${escapeHtml(text)}</div>
+                <div class="wish-card-time">${time}</div>
+            `;
+            wishesWall.prepend(card);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        wishForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('wishName').value.trim();
+            const text = document.getElementById('wishText').value.trim();
+            if (!name || !text) return;
+
+            const time = new Date().toLocaleString('en-IN', {
+                day: 'numeric', month: 'short', year: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            });
+
+            const wishes = JSON.parse(localStorage.getItem('papaWishes') || '[]');
+            wishes.unshift({ name, text, time });
+            localStorage.setItem('papaWishes', JSON.stringify(wishes));
+
+            addWishCard(name, text, time);
+            wishForm.reset();
+        });
+
+        loadWishes();
+
+        // ===== LIGHTBOX =====
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
